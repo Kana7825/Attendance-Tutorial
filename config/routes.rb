@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root 'static_pages#top'
+  root 'static_pages#top'# static_pages_controller.rbのtpoアクションはこれを呼びにきてView（Top.html.erb)を出力しtopページを出している
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
