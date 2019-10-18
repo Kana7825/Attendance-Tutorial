@@ -8,14 +8,13 @@
                                'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 
                                'data-turbolinks-track': 'reload' %>
-    <!-- HTML shimがこの1行で収まる　-->
+    <!-- HTML shimがこの1行で収まる -->
     <%= render 'layouts/shim' %>
   </head>
   <body>
-    <!-- headerの内容がこの1行で収まる　-->
+    <!-- headerの内容がこの1行で収まる -->
     <%= render 'layouts/header' %>
       <div class="container">
-    <div class="container">
     <%= yield %>  <!--レイアウトを使う時に、static_pages/topにアクセスするとtop.html.erbの内容がHTMLに変換され、＜%= yield %>＞の位置に挿入される-->
     </div>
    </body>
