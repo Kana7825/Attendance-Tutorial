@@ -1,8 +1,11 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
+  <!-- ↑　ﾅﾋﾞｹﾞｰｼｮﾝﾊﾞｰ　ﾄｯﾌﾟに固定表示　ﾊﾞｰの外観を色を反転させたかのように変更-->
   <div class="container">
     <%= link_to "Attendance App", root_path, id:"logo" %>
+    <!-- Attendance Appのﾘﾝｸ、ﾙｰﾃｨﾝｸﾞﾍﾙﾊﾟｰ、id:"logoはﾛｺﾞで表示という意味？-->
     <nav>
       <ul class="nav navbar-nav navbar-right">
+        <!-- ↑　nav navbar-nav＝ﾅﾋﾞﾊﾞｰを使用するメニューですと設定　右寄せ　-->　
         <li><%= link_to "Top", root_path  %></li>
         <li><%= link_to "Log in", '#' %></li>
       </ul>

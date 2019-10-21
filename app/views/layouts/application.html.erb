@@ -9,10 +9,12 @@
                                'data-turbolinks-track': 'reload' %>
     <!-- HTML shimがこの1行で収まる -->
     <%= render 'layouts/shim' %>
+    <!-- ↑　app/view/layouts/_shim.html.erbというﾌｧｲﾙを探し、内容を評価し結果をビューに挿入　-->
   </head>
   <body>
     <!-- headerの内容がこの1行で収まる -->
     <%= render 'layouts/header' %>
+    <!-- ↑　上のコードと同様　-->
       <div class="container">
     <%= yield %>  <!--レイアウトを使う時に、static_pages/topにアクセスするとtop.html.erbの内容がHTMLに変換され、＜%= yield %>＞の位置に挿入される-->
     </div>
