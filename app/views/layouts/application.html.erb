@@ -17,6 +17,7 @@
     <!-- ↑　上のコードと同様　-->
       <div class="container">
     <%= yield %>  <!--レイアウトを使う時に、static_pages/topにアクセスするとtop.html.erbの内容がHTMLに変換され、＜%= yield %>＞の位置に挿入される-->
+    <%= debug(params) if Rails.env.development? %>
     </div>
    </body>
 </html>
