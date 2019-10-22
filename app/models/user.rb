@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   # ↑この継承の働きによりActive Recordのﾒｿｯﾄﾞが使える
   before_save { self.email = email.downcase }
+  #　↑before_saveメソッドにブロック{self.email=...｝を渡してﾕｰｻﾞｰのﾒﾙｱﾄﾞを設定
+  #　↑現在のﾒﾙｱﾄﾞ（self.email）の値をdowncaseﾒｿｯﾄﾞを使って小文字に変換
   validates :name, presence: true, length: { maximum: 50}
   # ↑検証　名前の存在性あること、長さは50文字以下
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -8,5 +10,7 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum:100},
                     format:{with: VALID_EMAIL_REGEX },
                     uniqueness: true# 一意性の検証
+  has_secure_password
+  validates :password, presence: true, length: {minimum: 6}
 end
 
