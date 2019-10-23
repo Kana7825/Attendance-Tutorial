@@ -5,6 +5,10 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_with(model: @user, local: true) do |f| %>
+    <!-- ↑　doというｷｰﾜｰﾄﾞはform_withが１つの変数を持つブロックを取ることを表しています。 -->
+    <!-- ↑　|f|がﾌﾞﾛｯｸ変数と呼ばれるｵﾌﾞｼﾞｪｸﾄです（formのｆを指します） -->
+    <!-- ↑　ﾌﾞﾛｯｸ変数であるfはHTML要素に対応するﾒｿｯﾄﾞが呼び出されると、
+    　@userのｶﾗﾑを設定するために設計されたHTMLを返してくれます-->
     <%= f.label :name, class: "label-signup" %>
     <%= f.text_field :name, class: "form-control" %>
     
