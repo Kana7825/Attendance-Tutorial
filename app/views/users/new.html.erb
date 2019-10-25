@@ -8,7 +8,10 @@
     <!-- ↑　doというｷｰﾜｰﾄﾞはform_withが１つの変数を持つブロックを取ることを表しています。 -->
     <!-- ↑　|f|がﾌﾞﾛｯｸ変数と呼ばれるｵﾌﾞｼﾞｪｸﾄです（formのｆを指します） -->
     <!-- ↑　ﾌﾞﾛｯｸ変数であるfはHTML要素に対応するﾒｿｯﾄﾞが呼び出されると、
-    　@userのｶﾗﾑを設定するために設計されたHTMLを返してくれます-->
+    　@userのｶﾗﾑを設定するために設計されたHTML_を返してくれます-->
+    <%= render 'shared/error_messages' %>
+    <!-- ↑　パーシャル（_error_messages.html.erb）-->
+    
     <%= f.label :name, class: "label-signup" %>
     <%= f.text_field :name, class: "form-control" %>
     
