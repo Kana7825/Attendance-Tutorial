@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       # 保存に成功した場合は、ここに記述した処理が実行されます。
+     redirect_to @user
     else
       render :new
     end
