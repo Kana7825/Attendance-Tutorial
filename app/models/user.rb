@@ -40,5 +40,10 @@ end
 # トークンがダイジェストと一致すればtrueを返します。
   def authenticated?(remember_token)
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
-  end  
+  end 
+  
+# ユーザーのログイン情報を破棄します。
+  def forget
+    updat_attribute(:remember_digest, nil)
+  end
 end
