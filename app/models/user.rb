@@ -13,7 +13,7 @@ class User < ApplicationRecord
                     format:{with: VALID_EMAIL_REGEX },
                     uniqueness: true# 一意性の検証
   has_secure_password
-  validates :password, presence: true, length: {minimum: 6}
+  validates :password, presence: true, length: {minimum: 6}, allow_nil: true
 
 # 渡された文字列のハッシュ値を返します。
   def User.digest(string)
@@ -46,6 +46,6 @@ end
   
 # ユーザーのログイン情報を破棄します。
   def forget
-    updat_attribute(:remember_digest, nil)
+    update_attribute(:remember_digest, nil)
   end
 end

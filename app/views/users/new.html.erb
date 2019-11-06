@@ -1,30 +1,12 @@
 <% provide(:title, 'Sign up') %> 
 <!-- ↑signupは、Usersコントローラのnewアクションと紐づいてます　-->
+<% provide(:class_text, 'signup') %>
+<% provide(:button_text, '新規作成') %>
+
 <h1>ユーザー登録</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @user, local: true) do |f| %>
-    <!-- ↑　doというｷｰﾜｰﾄﾞはform_withが１つの変数を持つブロックを取ることを表しています。 -->
-    <!-- ↑　|f|がﾌﾞﾛｯｸ変数と呼ばれるｵﾌﾞｼﾞｪｸﾄです（formのｆを指します） -->
-    <!-- ↑　ﾌﾞﾛｯｸ変数であるfはHTML要素に対応するﾒｿｯﾄﾞが呼び出されると、
-    　@userのｶﾗﾑを設定するために設計されたHTML_を返してくれます-->
-    <%= render 'shared/error_messages' %>
-    <!-- ↑　パーシャル（_error_messages.html.erb）-->
-    
-    <%= f.label :name, class: "label-signup" %>
-    <%= f.text_field :name, class: "form-control" %>
-    
-    <%= f.label :email, class: "label-signup" %>
-    <%= f.email_field :email, class: "form-control" %>
-    
-    <%= f.label :password, class: "label-signup" %>
-    <%= f.password_field :password, class: "form-control" %>
-    
-    <%= f.label :password_confirmation, "Confirmation", class: "label-signup" %>
-    <%= f.password_field :password_confirmation, class: "form-control" %>
-    
-    <%= f.submit "新規作成", class: "btn btn-primary btn-block btn-signup" %>
-    <% end %>
+   <%= render 'form' %>
   </div>
 </div>
