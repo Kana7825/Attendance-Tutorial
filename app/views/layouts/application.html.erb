@@ -17,7 +17,7 @@
     <!-- ↑　_header.html.erbといううﾌｧｲﾙを探し、内容を評価し結果をビューに挿入　-->
       <div class="container">
       <% flash.each do |message_type, msg| %>
-        <div class="alert alert-<%= message_type %>"><%= msg %></div>
+        <div class="alert alert-<%= message_type %>"><%= msg.html_safe %></div>
       <% end %>
       <%= yield %>  <!--レイアウトを使う時に、static_pages/topにアクセスするとtop.html.erbの内容がHTMLに変換され、＜%= yield %>＞の位置に挿入される-->
       <%= debug(params) if Rails.env.development? %>
