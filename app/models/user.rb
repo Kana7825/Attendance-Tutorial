@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   # ↑この継承の働きによりActive Recordのﾒｿｯﾄﾞが使える
+  has_many :attendances, dependent: :destroy
   attr_accessor :remember_token
   # ↑「remember_token」という仮想の属性を作成します。
   before_save { self.email = email.downcase }
