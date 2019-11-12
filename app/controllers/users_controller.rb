@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @worked_sum = @attendances.where.not(started_at: nil).count # countメソッドは配列の要素数を取得することができます。
   end
   
   def new
