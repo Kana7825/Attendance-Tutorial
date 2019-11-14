@@ -1,7 +1,7 @@
 <% provide(:title, @user.name) %>
 <div>
   <h1>勤怠編集画面</h1>
-  <table class= "table table-bordered table-condensed table-hover" id="table-attendances"
+  <table class="table table-bordered table-condensed table-hover" id="table-attendances">
     <thead>
     <tr>
       <th>日付</th>
@@ -17,13 +17,17 @@
     <tr>
       <td><%= l(day.worked_on, format: :short) %></td>
       <!-- ↑　↓　10.2を見るとコードの意味が分かるよ-->
-      <th><%= $days_of_the_week[day.worked_on.wday] %></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <td><%= $days_of_the_week[day.worked_on.wday] %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
+    <% end %>
   </tbody>
+</table>
+</div>
 
+<div class="center">
+  <%= link_to "キャンセル", user_path(date: @first_day), class: "btn btn-lg btn-default" %>
 </div>
